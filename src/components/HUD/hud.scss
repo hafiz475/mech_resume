@@ -1,0 +1,72 @@
+// =================================================================
+// FILE: src/components/HUD/hud.scss
+// =================================================================
+
+.hud-root {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    width: 24rem;
+    z-index: 60;
+}
+
+.hud-card {
+    border-radius: 16px;
+    padding: 1rem;
+    background: linear-gradient(180deg, rgba(7, 22, 36, 0.78), rgba(6, 20, 28, 0.45));
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.hud-head {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.hud-avatar {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--accent), #0077ff);
+    color: #021;
+}
+
+.hud-name {
+    color: #fff;
+    font-weight: 700;
+}
+
+.hud-sub {
+    color: #9fb6cc;
+    font-size: 12px;
+}
+
+.hud-about p {
+    font-size: 13px;
+    color: #cfeeff;
+    margin-top: 6px;
+}
+
+.stack-list {
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.stack-pill {
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+.hud-actions {
+    margin-top: 12px;
+    display: flex;
+    gap: 8px;
+}

@@ -1,0 +1,30 @@
+// =================================================================
+// FILE: src/components/IronResume/iron-resume.scss
+// =================================================================
+
+@use '../../styles/global' as *;
+
+
+.iron-resume-root {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.life-panel-slot {
+    position: absolute;
+    top: 6rem;
+    left: 26rem;
+    z-index: 50;
+}
+
+.bottom-status {
+    position: absolute;
+    right: 2rem;
+    bottom: 1.5rem;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}

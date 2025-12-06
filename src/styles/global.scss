@@ -1,0 +1,33 @@
+// =================================================================
+// FILE: src/styles/global.scss
+// =================================================================
+:root {
+    --bg: #071624;
+    --card-bg: rgba(255, 255, 255, 0.02);
+    --accent: #00eaff;
+}
+
+
+body {
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    background: var(--bg);
+    color: #dbe8f8;
+}
+
+
+/* small helper classes used across components */
+.btn {
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.02);
+    color: #dbe8f8;
+    cursor: pointer;
+}
+
+.btn.primary {
+    background: linear-gradient(90deg, var(--accent), #0077ff);
+    color: #011;
+    font-weight: 700;
+}
