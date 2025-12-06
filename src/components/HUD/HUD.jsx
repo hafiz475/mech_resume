@@ -4,9 +4,12 @@
 
 import React from 'react';
 import './hud.scss';
+import clickBeep from "../../assets/sfx/ui-beep.mp3";
+import useSFX from "../../hooks/useSFX";
 
 
 export default function HUD({ profile, onOpenLife, onToggleAssembly, onSelectSection }) {
+    const { play } = useSFX();
     return (
         <div className="hud-root">
             <div className="hud-card">
@@ -34,9 +37,21 @@ export default function HUD({ profile, onOpenLife, onToggleAssembly, onSelectSec
 
 
                 <div className="hud-actions">
-                    <button onClick={onOpenLife} className="btn primary">Open Life Log</button>
-                    <button onClick={onToggleAssembly} className="btn">Toggle Assembly Floor</button>
+                    <button
+                        onClick={() => { play(clickBeep, 0.3); onOpenLife(); }}
+                        className="btn primary"
+                    >
+                        Open Life Log
+                    </button>
+
+                    <button
+                        onClick={() => { play(clickBeep, 0.3); onToggleAssembly(); }}
+                        className="btn"
+                    >
+                        Toggle Assembly Floor
+                    </button>
                 </div>
+
             </div>
         </div>
     );

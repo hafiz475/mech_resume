@@ -2,21 +2,41 @@
 // FILE: src/components/FloatingHologram/FloatingHologram.jsx
 // =================================================================
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Html } from '@react-three/drei';
 import { motion } from 'framer-motion';
 import { profile } from '../../data/profile';
 import './floating-hologram.scss';
+import whooshSound from "../../assets/sfx/hologram-whoosh.mp3";
+import useSFX from "../../hooks/useSFX";
 
 
 export default function FloatingHologram({ activeSectionId }) {
     const active = profile.sections.find(s => s.id === activeSectionId) || profile.sections[0];
+    const { play } = useSFX();
+
+    useEffect(() => {
+        play(whooshSound, 0.25);
+    }, [activeSectionId]);
+
     return (
         <Html position={[0.9, 1.15, -0.6]} center occlude>
             <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ type: 'spring', stiffness: 120, damping: 12 }} className="fh-card">
                 <div className="fh-period">{active.period}</div>
                 <div className="fh-title">{active.title}</div>
-                <div className="fh-text">{active.text}</div>
+                <div className="fh-text typewriter">
+                    {active.text.split("").map((char, i) => (
+                        <span
+                            key={i}
+                            className="tw-char"
+                            style={{
+                                animationDelay: `${i * 0.02}s`,
+                            }}
+                        >
+                            {char}
+                        </span>
+                    ))}
+                </div>
             </motion.div>
         </Html>
     );

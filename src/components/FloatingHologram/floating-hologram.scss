@@ -33,3 +33,21 @@
     max-height: 120px;
     overflow: hidden;
 }
+
+.typewriter .tw-char {
+    opacity: 0;
+    display: inline-block;
+    animation: typewriter 0.03s forwards;
+}
+
+@keyframes typewriter {
+    from {
+        opacity: 0;
+        transform: translateY(2px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
