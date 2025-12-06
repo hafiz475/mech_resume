@@ -7,9 +7,9 @@ import { Canvas } from '@react-three/fiber';
 import { ContactShadows, OrbitControls } from '@react-three/drei';
 import ArcReactor from '../ArcReactor/ArcReactor';
 import FloatingHologram from '../FloatingHologram/FloatingHologram';
-import RobotMock from '../Mocks/RobotMock';
-import BikeMock from '../Mocks/BikeMock';
-import FactoryBlock from '../Mocks/FactoryBlock';
+import RobotArm from '../CodedModels/RobotArm';
+import HoverBike from '../CodedModels/HoverBike';
+import HologramTable from '../CodedModels/HologramTable';
 import HUD from '../HUD/HUD';
 import LifeLogPanel from '../LifeLogPanel/LifeLogPanel';
 import { profile } from '../../data/profile';
@@ -50,9 +50,9 @@ export default function IronResume() {
                         <pointLight position={[0, 4, 2]} intensity={1.2} color={'#00eaff'} />
 
                         <ArcReactor active={arcPulse} />
-                        <RobotMock />
-                        {assemblyVisible && <FactoryBlock />}
-                        <BikeMock />
+                        <RobotArm position={[-2, 0, -1]} scale={1} />
+                        {assemblyVisible && <HologramTable position={[0, -0.05, 3]} scale={1} />}
+                        <HoverBike position={[2.4, 0.1, -1]} scale={1} />
 
                         <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.55, 0]}>
                             <planeGeometry args={[40, 40]} />
