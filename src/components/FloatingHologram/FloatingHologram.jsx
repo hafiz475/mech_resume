@@ -9,6 +9,7 @@ import { profile } from '../../data/profile';
 import './floating-hologram.scss';
 import whooshSound from "../../assets/sfx/hologram-whoosh.mp3";
 import useSFX from "../../hooks/useSFX";
+import HologramSurface from '../HologramSurface/HologramSurface';
 
 
 export default function FloatingHologram({ activeSectionId }) {
@@ -20,24 +21,31 @@ export default function FloatingHologram({ activeSectionId }) {
     }, [activeSectionId]);
 
     return (
-        <Html position={[0.9, 1.15, -0.6]} center occlude>
-            <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ type: 'spring', stiffness: 120, damping: 12 }} className="fh-card">
-                <div className="fh-period">{active.period}</div>
-                <div className="fh-title">{active.title}</div>
-                <div className="fh-text typewriter">
-                    {active.text.split("").map((char, i) => (
-                        <span
-                            key={i}
-                            className="tw-char"
-                            style={{
-                                animationDelay: `${i * 0.02}s`,
-                            }}
-                        >
-                            {char}
-                        </span>
-                    ))}
-                </div>
-            </motion.div>
-        </Html>
+        <group position={[0.9, 1.15, -0.6]}>
+            {/* hologram background */}
+            <HologramSurface width={1.4} height={1} rotation={[0, 0, 0]} />
+
+
+            {/* floating UI (HTML) */}
+            <Html center distanceFactor={10}>
+                <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ type: 'spring', stiffness: 120, damping: 12 }} className="fh-card">
+                    <div className="fh-period">{active.period}</div>
+                    <div className="fh-title">{active.title}</div>
+                    <div className="fh-text typewriter">
+                        {active.text.split("").map((char, i) => (
+                            <span
+                                key={i}
+                                className="tw-char"
+                                style={{
+                                    animationDelay: `${i * 0.02}s`,
+                                }}
+                            >
+                                {char}
+                            </span>
+                        ))}
+                    </div>
+                </motion.div>
+            </Html>
+        </group>
     );
 }
