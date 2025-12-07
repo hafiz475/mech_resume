@@ -23,6 +23,13 @@ export default function HUDRadar({ activeSection }) {
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             />
 
+            {/* 🔥 NEW: Radar Sweep Beam */}
+            <motion.div
+                className="radar-sweep"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+            />
+
             {/* Active Target Label */}
             <div className="radar-label">
                 <div className="radar-title">TRACKING</div>
