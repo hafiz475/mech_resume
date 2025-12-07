@@ -18,6 +18,7 @@ import './iron-resume.scss';
 import BootScreen from "../BootScreen/BootScreen";
 
 import BloomEffects from '../PostProcessing/Bloom';
+import Radar3D from "../Radar3D/Radar3D";
 
 
 
@@ -53,6 +54,13 @@ export default function IronResume() {
                         <pointLight position={[0, 4, 2]} intensity={1.2} color={'#00eaff'} />
 
                         <ArcReactor active={arcPulse} />
+                        <Radar3D
+                            profile={profile}
+                            activeSection={activeSection}
+                            position={[2.2, 1.8, 2.5]}
+                            scale={2.2}
+                        />
+
                         <RobotArm position={[-2, 0, -1]} scale={1} />
                         {assemblyVisible && <HologramTable position={[0, -0.05, 3]} scale={1} />}
                         <HoverBike position={[2.4, 0.1, -1]} scale={1} />
@@ -79,7 +87,7 @@ export default function IronResume() {
                         onSelectSection={(id) => setActiveSection(id)}
                     />
 
-                    <HUDRadar activeSection={activeSection} />
+                    <HUDRadar activeSection={activeSection} profile={profile} />
 
                     <div className="life-panel-slot">
                         <LifeLogPanel
