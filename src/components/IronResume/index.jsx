@@ -9,7 +9,7 @@ import ArcReactor from '../ArcReactor/ArcReactor';
 import FloatingHologram from '../FloatingHologram/FloatingHologram';
 import RobotArm from '../CodedModels/RobotArm';
 import HoverBike from '../CodedModels/HoverBike';
-import HologramTable from '../CodedModels/HologramTable';
+// import HologramTable from '../CodedModels/HologramTable';
 import HUD from '../HUD/HUD';
 import LifeLogPanel from '../LifeLogPanel/LifeLogPanel';
 import HUDRadar from "../HUDRadar/HUDRadar";
@@ -19,6 +19,10 @@ import BootScreen from "../BootScreen/BootScreen";
 
 import BloomEffects from '../PostProcessing/Bloom';
 import Radar3D from "../Radar3D/Radar3D";
+
+//3d_models
+import HologramTable from '../HologramTable/HologramTable';
+
 
 
 
@@ -63,7 +67,13 @@ export default function IronResume() {
 
 
                         <RobotArm position={[-2, 0, -1]} scale={1} />
-                        {assemblyVisible && <HologramTable position={[0, -0.05, 3]} scale={1} />}
+                        {assemblyVisible && (
+                            <HologramTable
+                                position={[0, -0.2, 3]}
+                                scale={20}
+                            />
+                        )}
+
                         <HoverBike position={[2.4, 0.1, -1]} scale={1} />
 
                         <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.55, 0]}>
@@ -77,7 +87,7 @@ export default function IronResume() {
                         <FloatingHologram activeSectionId={activeSection} />
 
                         {/* POSTPROCESSING (bloom/glow) */}
-                        <BloomEffects intensity={0.95} luminanceThreshold={0.18} luminanceSmoothing={0.9} radius={0.6} />
+                        {/* <BloomEffects intensity={0.95} luminanceThreshold={0.18} luminanceSmoothing={0.9} radius={0.6} /> */}
 
                     </Canvas>
 
