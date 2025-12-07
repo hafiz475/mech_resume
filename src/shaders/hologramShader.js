@@ -33,7 +33,8 @@ export const hologramShader = {
       float ring = smoothstep(0.48, 0.5, abs(dist - (0.3 + sin(uTime * 2.0) * 0.1))) * 0.8;
 
       // base hologram color
-      vec3 finalColor = uColor + scan + ring + flicker;
+vec3 finalColor = (uColor * 1.6) + scan * 1.2 + ring * 1.8 + flicker * 1.3;
+
 
       gl_FragColor = vec4(finalColor, uOpacity);
     }

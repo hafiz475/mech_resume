@@ -16,6 +16,8 @@ import { profile } from '../../data/profile';
 import './iron-resume.scss';
 import BootScreen from "../BootScreen/BootScreen";
 
+import BloomEffects from '../PostProcessing/Bloom';
+
 
 
 export default function IronResume() {
@@ -63,6 +65,10 @@ export default function IronResume() {
                         <OrbitControls enablePan enableZoom enableRotate />
 
                         <FloatingHologram activeSectionId={activeSection} />
+
+                        {/* POSTPROCESSING (bloom/glow) */}
+                        <BloomEffects intensity={0.95} luminanceThreshold={0.18} luminanceSmoothing={0.9} radius={0.6} />
+
                     </Canvas>
 
                     <HUD

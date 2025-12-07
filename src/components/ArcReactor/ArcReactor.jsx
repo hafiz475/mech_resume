@@ -36,7 +36,7 @@ export default function ArcReactor({ active = false }) {
     return (
         <mesh ref={ref} position={[0, 1.15, 0]}>
             <torusGeometry args={[0.7, 0.12, 18, 128]} />
-            <meshStandardMaterial emissive={'#00f5ff'} metalness={0.95} roughness={0.02} emissiveIntensity={1.2} />
+            <meshStandardMaterial emissive={'#00f5ff'} metalness={0.95} roughness={0.02} emissiveIntensity={2.4} />
         </mesh>
     );
 }
