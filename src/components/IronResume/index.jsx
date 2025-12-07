@@ -57,9 +57,10 @@ export default function IronResume() {
                         <Radar3D
                             profile={profile}
                             activeSection={activeSection}
-                            position={[2.2, 1.8, 2.5]}
-                            scale={2.2}
+                            position={[0, 1.0, 3]}
+                            scale={1.4}
                         />
+
 
                         <RobotArm position={[-2, 0, -1]} scale={1} />
                         {assemblyVisible && <HologramTable position={[0, -0.05, 3]} scale={1} />}
