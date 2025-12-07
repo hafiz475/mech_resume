@@ -12,6 +12,7 @@ import HoverBike from '../CodedModels/HoverBike';
 import HologramTable from '../CodedModels/HologramTable';
 import HUD from '../HUD/HUD';
 import LifeLogPanel from '../LifeLogPanel/LifeLogPanel';
+import HUDRadar from "../HUDRadar/HUDRadar";
 import { profile } from '../../data/profile';
 import './iron-resume.scss';
 import BootScreen from "../BootScreen/BootScreen";
@@ -77,6 +78,8 @@ export default function IronResume() {
                         onToggleAssembly={() => setAssemblyVisible((v) => !v)}
                         onSelectSection={(id) => setActiveSection(id)}
                     />
+
+                    <HUDRadar activeSection={activeSection} />
 
                     <div className="life-panel-slot">
                         <LifeLogPanel
