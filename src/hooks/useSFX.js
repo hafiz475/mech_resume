@@ -1,11 +1,10 @@
-import { useCallback } from "react";
-
+// src/hooks/useSFX.js
 export default function useSFX() {
-    const play = useCallback((path, volume = 0.5) => {
-        const audio = new Audio(path);
+    const play = (src, volume = 1) => {
+        const audio = new Audio(src);
         audio.volume = volume;
-        audio.play();
-    }, []);
+        audio.play().catch(() => { });
+    };
 
     return { play };
 }
