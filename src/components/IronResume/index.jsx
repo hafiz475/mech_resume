@@ -29,6 +29,11 @@ import TronFloorModel from "../TronFloorModel/TronFloorModel";
 import SciFiTerminalModel from "../SciFiTerminalModel/SciFiTerminalModel";
 import SciFiDeskModel from "../SciFiDeskModel/SciFiDeskModel";
 
+
+import TronCarModel from "../TronCarModel/TronCarModel";
+import TimeMachineModel from "../TimeMachineModel/TimeMachineModel";
+import CyberLaptopModel from "../CyberLaptopMode/CyberLaptopMode";
+
 // =================================================================
 // COMPONENT
 // =================================================================
@@ -105,6 +110,9 @@ export default function IronResume() {
                             scale={4}
                         />
 
+                        <TronCarModel position={[12, 0.65, -12]} scale={1.5} rotation={[0, Math.PI / 4, 0]} />
+                        <TimeMachineModel position={[0, -0.55, -12]} scale={0.1} rotation={[0, -Math.PI / 2, 0]} />
+                        <CyberLaptopModel position={[2.2, 1.6, 3.5]} rotation={[0, -Math.PI / 4, 0]} scale={0.5} />
 
 
 
@@ -118,7 +126,7 @@ export default function IronResume() {
 
                         <HoverBikeModel
                             position={[7, -0.55, -2.5]}
-                            scale={0.3}
+                            scale={0.5}
                         />
 
                         {/* ===== SHADOW RECEIVING PLANE ===== */}
