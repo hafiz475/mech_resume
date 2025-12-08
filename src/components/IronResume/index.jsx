@@ -5,11 +5,11 @@
 import React, { useState, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { ContactShadows, OrbitControls } from '@react-three/drei';
-import ArcReactor from '../ArcReactor/ArcReactor';
+import ArcReactorModel from '../ArcReactorModel/ArcReactorModel';
 import FloatingHologram from '../FloatingHologram/FloatingHologram';
 // import RobotArm from '../CodedModels/RobotArm';
 import RobotArmModel from "../RobotArmModel/RobotArmModel";
-import HoverBike from '../CodedModels/HoverBike';
+import HoverBikeModel from '../HoverBikeModel/HoverBikeModel';
 // import HologramTable from '../CodedModels/HologramTable';
 import HUD from '../HUD/HUD';
 import LifeLogPanel from '../LifeLogPanel/LifeLogPanel';
@@ -58,7 +58,7 @@ export default function IronResume() {
                         <directionalLight position={[5, 10, 5]} intensity={1.1} />
                         <pointLight position={[0, 4, 2]} intensity={1.2} color={'#00eaff'} />
 
-                        <ArcReactor active={arcPulse} />
+                        <ArcReactorModel position={[0, 1.15, 0]} scale={0.4} />
                         <Radar3D
                             profile={profile}
                             activeSection={activeSection}
@@ -80,7 +80,7 @@ export default function IronResume() {
                             />
                         )}
 
-                        <HoverBike position={[2.4, 0.1, -1]} scale={1} />
+                        <HoverBikeModel position={[2.4, 0.1, -1]} scale={0.3} />
 
                         <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.55, 0]}>
                             <planeGeometry args={[40, 40]} />
