@@ -26,6 +26,7 @@ import HologramTable from "../HologramTable/HologramTable";
 import WoodenFloor from "../WoodenFloor/WoodenFloor";
 import OvalRoom from "../OvalRoom/OvalRoom";
 import TronFloorModel from "../TronFloorModel/TronFloorModel";
+import SciFiTerminalModel from "../SciFiTerminalModel/SciFiTerminalModel";
 
 // =================================================================
 // COMPONENT
@@ -84,6 +85,12 @@ export default function IronResume() {
                             activeSection={activeSection}
                             position={[0, 1.0, 3]}
                             scale={1.4}
+                        />
+
+                        <SciFiTerminalModel
+                            position={[-4, -0.55, -1.5]}
+                            rotation={[0, Math.PI, 0]}
+                            scale={0.5}
                         />
 
                         <RobotArmModel
