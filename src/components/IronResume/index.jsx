@@ -27,6 +27,7 @@ import WoodenFloor from "../WoodenFloor/WoodenFloor";
 import OvalRoom from "../OvalRoom/OvalRoom";
 import TronFloorModel from "../TronFloorModel/TronFloorModel";
 import SciFiTerminalModel from "../SciFiTerminalModel/SciFiTerminalModel";
+import SciFiDeskModel from "../SciFiDeskModel/SciFiDeskModel";
 
 // =================================================================
 // COMPONENT
@@ -98,6 +99,14 @@ export default function IronResume() {
                             rotation={[0, Math.PI / 2, 0]}
                             scale={6}
                         />
+                        <SciFiDeskModel
+                            position={[7.2, -2.2, 7]}
+                            rotation={[0, -Math.PI / 512, 0]}
+                            scale={4}
+                        />
+
+
+
 
 
                         {assemblyVisible && (
