@@ -7,7 +7,8 @@ import { Canvas } from '@react-three/fiber';
 import { ContactShadows, OrbitControls } from '@react-three/drei';
 import ArcReactor from '../ArcReactor/ArcReactor';
 import FloatingHologram from '../FloatingHologram/FloatingHologram';
-import RobotArm from '../CodedModels/RobotArm';
+// import RobotArm from '../CodedModels/RobotArm';
+import RobotArmModel from "../RobotArmModel/RobotArmModel";
 import HoverBike from '../CodedModels/HoverBike';
 // import HologramTable from '../CodedModels/HologramTable';
 import HUD from '../HUD/HUD';
@@ -66,7 +67,12 @@ export default function IronResume() {
                         />
 
 
-                        <RobotArm position={[-2, 0, -1]} scale={1} />
+                        <RobotArmModel
+                            position={[-2, 0, -1]}
+                            rotation={[0, Math.PI / 2, 0]}
+                            scale={3}
+                        />
+
                         {assemblyVisible && (
                             <HologramTable
                                 position={[0, -0.2, 3]}
