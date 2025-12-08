@@ -12,22 +12,28 @@ export default function RobotArmModel({
     scale = 1
 }) {
     const group = useRef();
+    const { scene } = useGLTF("/models/robot-arm/arm.glb");
 
-    // Load GLB
-    const gltf = useGLTF("/models/robot-arm/arm.glb");
+    // Basic emissive highlight + shadows
+    scene.traverse((obj) => {
+        if (obj.isMesh) {
+            obj.castShadow = true;
+            obj.receiveShadow = true;
 
-    // Add simple emissive highlight (optional)
-    gltf.scene.traverse((node) => {
-        if (node.isMesh) {
-            node.material = node.material.clone();
-            node.material.emissive = new THREE.Color("#00eaff");
-            node.material.emissiveIntensity = 0.08;
+            obj.material = obj.material.clone();
+            obj.material.emissive = new THREE.Color("#00eaff");
+            obj.material.emissiveIntensity = 0.1;
         }
     });
 
     return (
-        <group ref={group} position={position} rotation={rotation} scale={scale}>
-            <primitive object={gltf.scene} />
+        <group
+            ref={group}
+            position={position}
+            rotation={rotation}
+            scale={scale}
+        >
+            <primitive object={scene} />
         </group>
     );
 }
